@@ -1,0 +1,35 @@
+{
+  "name": "styled-tag",
+  "version": "1.0.0-0",
+  "description": "React HOC to set an element's tag and remove props",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "babel src -d dist",
+    "test": "jest",
+    "cover": "jest --coverage"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "higher-order-component",
+    "hoc",
+    "html-tag",
+    "styled-components"
+  ],
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "devDependencies": {
+    "@storybook/react": "^3.1.9",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-jest": "^20.0.3",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^20.0.4",
+    "jest-styled-components": "^4.2.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1",
+    "styled-components": "^2.1.1"
+  }
+}

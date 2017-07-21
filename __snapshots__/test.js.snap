@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`accepts components 1`] = `
+<h1
+  is={null}
+/>
+`;
+
+exports[`accepts components 2`] = `
+<h2
+  is={null}
+/>
+`;
+
+exports[`is props changes tag 1`] = `
+<h1
+  is={null}
+/>
+`;
+
+exports[`renders 1`] = `
+<div
+  is={null}
+/>
+`;
