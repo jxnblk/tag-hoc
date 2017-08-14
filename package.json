@@ -1,6 +1,6 @@
 {
   "name": "tag-hoc",
-  "version": "1.0.0-0",
+  "version": "1.0.0",
   "description": "React HOC to set an element's tag and remove props",
   "main": "dist/tag.js",
   "scripts": {
