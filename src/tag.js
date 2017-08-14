@@ -1,7 +1,7 @@
 import React from 'react'
 
-const tag = (propsToRemove = []) => {
-  const clean = cleanProps(propsToRemove)
+const tag = (blacklist = []) => {
+  const clean = cleanProps(blacklist)
 
   return type => {
     const Base = props => {
@@ -18,19 +18,13 @@ const tag = (propsToRemove = []) => {
   }
 }
 
-export const cleanProps = keys => {
-  const dict = keys.reduce((a, key) => Object.assign(a, {
-    [key]: true
-  }), {})
-
-  return props => {
-    const next = {}
-    for (let key in props) {
-      if (dict[key]) continue
-      next[key] = props[key]
-    }
-    return next
+export const cleanProps = blacklist => props => {
+  const next = {}
+  for (let key in props) {
+    if (blacklist.includes(key)) continue
+    next[key] = props[key]
   }
+  return next
 }
 
 export default tag
