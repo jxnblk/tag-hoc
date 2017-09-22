@@ -28,6 +28,13 @@ test('cleans props', () => {
   expect(json.props.pass).toBe('through')
 })
 
+test('cleans React Component props', () => {
+  Comp = tag([ 'foo' ])(props => <div {...props} />)
+  const json = render(<Comp foo='boop' pass='through' />).toJSON()
+  expect(json.props.foo).toBeUndefined()
+  expect(json.props.pass).toBe('through')
+})
+
 test('defaults to an empty array for propsToRemove argument', () => {
   Comp = tag()('div')
   const json = render(<Comp foo='boop' />).toJSON()

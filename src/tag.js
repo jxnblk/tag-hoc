@@ -7,7 +7,7 @@ const tag = (blacklist = []) => {
     const Base = props => {
       const isEl = typeof type === 'string'
       const Comp = isEl ? (props.is || type) : type
-      const next = isEl ? clean(props) : props
+      const next = clean(props)
 
       if (isEl) next.is = null
 
