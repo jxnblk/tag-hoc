@@ -3,28 +3,25 @@ import React from 'react'
 const tag = (blacklist = []) => {
   const clean = cleanProps(blacklist)
 
-  return type => {
-    const Base = props => {
-      const isEl = typeof type === 'string'
-      const Comp = isEl ? (props.is || type) : type
-      const next = isEl ? clean(props) : props
-
-      if (isEl) next.is = null
-
-      return <Comp {...next} />
+  return type => typeof type !== 'string'
+    ? type
+    : props => {
+      const Comp = (props.is || type)
+      return <Comp {...clean(props)} />
     }
-
-    return Base
-  }
 }
 
-export const cleanProps = blacklist => props => {
-  const next = {}
-  for (let key in props) {
-    if (blacklist.includes(key)) continue
-    next[key] = props[key]
+export const cleanProps = blacklist => {
+  const blacklistSet = { is: true };
+  blacklist.forEach(key => blacklistSet[key] = true);
+  return props => {
+    const next = {}
+    for (let key in props) {
+      if (blacklistSet[key]) continue
+      next[key] = props[key]
+    }
+    return next
   }
-  return next
 }
 
 export default tag
