@@ -13,10 +13,10 @@ npm i tag-hoc
 
 ```..jsx
 // Example with styled-components
-// import React from 'react'
-// import { render } from 'react-dom'
-// import styled from 'styled-components'
-// import tag from 'tag-hoc'
+import React from 'react'
+import { render } from 'react-dom'
+import styled from 'styled-components'
+import tag from 'tag-hoc'
 
 const propsToRemove = [
   'color'
